@@ -4,15 +4,49 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public bool phoneIsConnected = false;
+
+
+    [HideInInspector]
+    public Vector3 dir, startPosition;
+    Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = this.GetComponent<Rigidbody>();
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            ResetPlayer();
+            Debug.Log("Pressed R");
+        } 
+        if(this.transform.position.y < -100) ResetPlayer();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        dir = Vector3.zero;
+        if(phoneIsConnected)
+        {
+            dir.x = Input.acceleration.x;
+            dir.z = Input.acceleration.y;
+        } 
+        else
+        {
+            dir.x = Input.GetAxis("Horizontal");
+            dir.z = Input.GetAxis("Vertical");
+
+        }
+        rb.AddForce(dir * 10);
+    }
+
+    public void ResetPlayer()
+    {
+        rb.velocity = Vector3.zero;
+        this.transform.position = startPosition;
     }
 }
