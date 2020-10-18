@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - GameManager
+  - Coin
+  - Jump Pickup
+  - Door
+  - Door2
   layers:
   - Default
   - TransparentFX
