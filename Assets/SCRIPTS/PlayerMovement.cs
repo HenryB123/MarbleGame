@@ -1,14 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
+     
+
     public bool phoneIsConnected = false;
 
     [Header("Movement")]
     public float jumpForce = 5;
+    public float dashForce = 5;
+    public float moveSpeed = 10;
 
     [Header("Audio Clip")]
     public AudioClip calibrateClip;
@@ -17,6 +22,11 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Score UI")]
     public TextMeshProUGUI scoreText;
+
+    [Header("Other Stuff")]
+    [Tooltip("Assign the main camera to this. It will be disabled when we encounter a CustomCam.")]
+    public GameObject mainCam;
+    public Button jumpButton;
 
     [HideInInspector]
     public Vector3 dir, startPosition, calibratedDir;
@@ -38,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         startPosition = this.transform.position;
         aud = GameObject.Find("CalibrateSound").GetComponent<AudioSource>();
         CalibrateTilt();
+        jumpButton.interactable = false;
     }
 
     void Update()
@@ -70,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
             dir.z = Input.GetAxis("Vertical");
 
         }
-        rb.AddForce(dir * 10);
+        rb.AddForce(dir * moveSpeed);
     }
 
     public void ResetPlayer()
@@ -97,8 +108,30 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter() { isGrounded = true;}
-    void OnCollisionExit() { isGrounded = false;}
+    public void Dash()
+    {
+        if(true)
+        {
+            rb.AddForce(dir * dashForce, ForceMode.Impulse);
+            aud.PlayOneShot(jumpClip);
+        }
+    }
+
+    void OnCollisionEnter(Collision other) {
+        if(other.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+            if(canJump) jumpButton.interactable = true;
+        }    
+    }
+
+    void OnCollisionExit(Collision other) {
+        if(other.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+            jumpButton.interactable = false;    // add to Start()
+        }
+    }
 
 
     void OnTriggerEnter(Collider other)
@@ -113,7 +146,14 @@ public class PlayerMovement : MonoBehaviour
         if(other.gameObject.name == "Jump Pickup")
         {
             canJump = true;
+            jumpButton.interactable = true;
             Destroy(other.gameObject);
+        }
+
+        if(other.gameObject.CompareTag("CustomCam"))
+        {
+            mainCam.SetActive(false);
+            other.transform.GetChild(0).gameObject.SetActive(true);
         }
 
         if(other.gameObject.CompareTag("Door"))
@@ -130,6 +170,15 @@ public class PlayerMovement : MonoBehaviour
             {
                 Destroy(other.gameObject);
             }
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.CompareTag("CustomCam"))
+        {
+            mainCam.SetActive(true);
+            other.transform.GetChild(0).gameObject.SetActive(false);
         }
     }
 

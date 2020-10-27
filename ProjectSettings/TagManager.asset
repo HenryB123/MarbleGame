@@ -9,6 +9,8 @@ TagManager:
   - Jump Pickup
   - Door
   - Door2
+  - Ground
+  - CustomCam
   layers:
   - Default
   - TransparentFX

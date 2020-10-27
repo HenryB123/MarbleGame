@@ -647,7 +647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startGame: 0
-  destination: TestScene
+  destination: 
 --- !u!1 &1351680517
 GameObject:
   m_ObjectHideFlags: 0
