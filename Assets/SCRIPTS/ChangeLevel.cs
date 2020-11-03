@@ -21,7 +21,7 @@ public class ChangeLevel : MonoBehaviour
         // if a number was passed through to this method, go to that level.
         if(index != 0){
             // we are going to a specific level
-            UnityEngine.SceneManagement.SceneManager.LoadScene(destination);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(index);
             return; 
         }
         // if no index was given, and no destination was specified, go to main menu.

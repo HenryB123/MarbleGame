@@ -403,8 +403,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phoneIsConnected: 1
+  jumpForce: 5
+  dashForce: 5
+  moveSpeed: 10
+  calibrateClip: {fileID: 0}
+  jumpClip: {fileID: 0}
+  coinClip: {fileID: 0}
+  scoreText: {fileID: 0}
+  mainCam: {fileID: 0}
+  jumpButton: {fileID: 0}
   dir: {x: 0, y: 0, z: 0}
   startPosition: {x: 0, y: 0, z: 0}
+  calibratedDir: {x: 0, y: 0, z: 0}
 --- !u!54 &481374510
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -554,7 +564,7 @@ GameObject:
   - component: {fileID: 641923445}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
