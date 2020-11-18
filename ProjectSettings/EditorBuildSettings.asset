@@ -6,36 +6,45 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/New Folder/EndLevel.unity
+    guid: 3a6820ab8039fff48823ad8da7d8431b
+  - enabled: 1
+    path: Assets/Scenes/New Folder/MainMenu.unity
     guid: c25459553f93c1b4ab998c1334e814e7
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/New Folder/Level_1-1.unity
+    guid: 17de4c0e5eb45114a812712774826fda
   - enabled: 1
-    path: Assets/Scenes/Level2.unity
-    guid: e5205d96b8a06ca458b80bc6512e99d4
+    path: Assets/Scenes/New Folder/Level_1-2.unity
+    guid: 2ef0e2b2ca3690c46a22d9d0a67f8f63
   - enabled: 1
-    path: Assets/Scenes/Level3.unity
-    guid: 0bccc5760468b8f41abd086ada82b679
+    path: Assets/Scenes/New Folder/Level_1-3.unity
+    guid: 48208d2877aa9ed4491535d3b78ebb3e
   - enabled: 1
-    path: Assets/Scenes/Level4.unity
-    guid: 40449e3a8c7f90b4fb41c19900d5d779
+    path: Assets/Scenes/New Folder/Level_1-4.unity
+    guid: 30c2b437281070e44af3d432579241ac
   - enabled: 1
-    path: Assets/Scenes/Level5.unity
-    guid: 9e78302d5fe7a4442b112c55f0efc75f
+    path: Assets/Scenes/New Folder/Level_2-1.unity
+    guid: da69b4ed57f175148b3c2664068ca06e
   - enabled: 1
-    path: Assets/Scenes/Level6.unity
-    guid: a96b32adc41051f4f8184bd300d2a7f4
+    path: Assets/Scenes/New Folder/Level_2-2.unity
+    guid: be2b45a48a27be1448dd063ad712e27b
   - enabled: 1
-    path: Assets/Scenes/Level7.unity
-    guid: 8187ec4a34682b4428048e13a527932f
+    path: Assets/Scenes/New Folder/Level_2-3.unity
+    guid: 03fa574741816a8438093a26fce5e637
   - enabled: 1
-    path: Assets/Scenes/Level8.unity
-    guid: 0d7e63b79c45aab4db8e6a597e5a6764
+    path: Assets/Scenes/New Folder/Level_2-4.unity
+    guid: 274068140e93f2847b1d0956a7067843
   - enabled: 1
-    path: Assets/Scenes/Level9.unity
-    guid: 821f6e101be02d44cb6984fd26cb1b59
+    path: Assets/Scenes/New Folder/Level_3-1.unity
+    guid: 74de926286a291943b929089ac1090e5
   - enabled: 1
-    path: Assets/Scenes/Level10.unity
-    guid: 7934ae19c6c84be42ba627fe11e624ea
+    path: Assets/Scenes/New Folder/Level_3-2.unity
+    guid: 9719993ce3ee17c459cc607749b21f81
+  - enabled: 1
+    path: Assets/Scenes/New Folder/Level_3-3.unity
+    guid: 505313be2403e1a42977d5bdc4a0e24c
+  - enabled: 1
+    path: Assets/Scenes/New Folder/Level_3-4.unity
+    guid: 3761e89f2ccde464b92949e80c236d77
   m_configObjects: {}

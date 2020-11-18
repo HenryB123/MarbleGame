@@ -11,6 +11,8 @@ TagManager:
   - Door2
   - Ground
   - CustomCam
+  - Checkpoint
+  - Spikes
   layers:
   - Default
   - TransparentFX
